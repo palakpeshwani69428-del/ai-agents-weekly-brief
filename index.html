@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Market Intelligence Brief — AI Agents &amp; Enterprise Software | Sep 22–29, 2026</title>
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-2:#1b2a3a;
+    --slate:#4a5a6a;
+    --muted:#6b7a8a;
+    --line:#e2e6ea;
+    --paper:#ffffff;
+    --paper-2:#f6f7f9;
+    --amber:#c8860d;
+    --amber-soft:#fdf6e6;
+    --teal:#0f6e6e;
+    --teal-soft:#e8f4f4;
+    --red:#a83232;
+    --red-soft:#fbeeee;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper-2);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px;}
+
+  /* ---------- MASTHEAD ---------- */
+  header.masthead{
+    background:var(--ink);
+    color:#fff;
+    padding:52px 0 44px;
+    border-bottom:5px solid var(--amber);
+  }
+  .kicker{
+    display:inline-block;
+    font-size:11.5px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:var(--amber);
+    border:1px solid rgba(200,134,13,.5);
+    border-radius:3px;
+    padding:5px 11px;
+    margin-bottom:20px;
+  }
+  header.masthead h1{
+    font-size:clamp(28px,4.4vw,44px);
+    line-height:1.14;
+    margin:0 0 14px;
+    font-weight:800;
+    letter-spacing:-.02em;
+  }
+  header.masthead h1 span{color:var(--amber);}
+  .dek{
+    font-size:17px;
+    color:#c3ccd6;
+    max-width:720px;
+    margin:0 0 26px;
+  }
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 26px;
+    font-size:13px;
+    color:#93a2b1;
+    border-top:1px solid rgba(255,255,255,.13);
+    padding-top:18px;
+  }
+  .meta-row b{color:#e8edf2;font-weight:600;}
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+    margin:-30px 0 0;
+    position:relative;
+    z-index:2;
+    box-shadow:0 8px 26px rgba(13,27,42,.09);
+  }
+  .stat{background:#fff;padding:20px 18px;}
+  .stat .n{font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1.1;}
+  .stat .n em{font-style:normal;color:var(--amber);}
+  .stat .l{font-size:11.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:600;margin-top:6px;}
+
+  /* ---------- SECTIONS ---------- */
+  main{padding:44px 0 20px;}
+  section{margin-bottom:46px;}
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:10px;
+    margin-bottom:26px;
+  }
+  .sec-head h2{
+    font-size:20px;
+    margin:0;
+    font-weight:800;
+    letter-spacing:-.01em;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+  .sec-head .count{
+    font-size:12px;
+    color:var(--muted);
+    font-weight:600;
+    margin-left:auto;
+    white-space:nowrap;
+  }
+
+  /* ---------- DEVELOPMENT CARDS ---------- */
+  .dev{
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:4px solid var(--amber);
+    border-radius:7px;
+    padding:24px 26px;
+    margin-bottom:18px;
+    box-shadow:0 1px 3px rgba(13,27,42,.05);
+  }
+  .dev.reg{border-left-color:var(--red);}
+  .dev.sec{border-left-color:var(--teal);}
+  .dev-top{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:12px;
+  }
+  .num{
+    font-size:12px;
+    font-weight:800;
+    color:#fff;
+    background:var(--ink);
+    width:26px;height:26px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    flex:0 0 auto;
+  }
+  .dev h3{
+    font-size:19px;
+    margin:0;
+    font-weight:750;
+    letter-spacing:-.01em;
+    line-height:1.3;
+    flex:1 1 320px;
+  }
+  .tag{
+    font-size:10.5px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    padding:4px 9px;
+    border-radius:3px;
+    white-space:nowrap;
+  }
+  .tag.product{background:var(--amber-soft);color:#8a5c05;}
+  .tag.funding{background:#eef2f7;color:#2c4a6b;}
+  .tag.partner{background:var(--teal-soft);color:#0b5252;}
+  .tag.reg{background:var(--red-soft);color:#8a2626;}
+  .tag.adopt{background:#f0f4ec;color:#3f5c2a;}
+  .dev p{margin:0 0 12px;font-size:15.5px;color:var(--ink-2);}
+  .dev p:last-child{margin-bottom:0;}
+  .why{
+    background:var(--paper-2);
+    border-radius:5px;
+    padding:13px 16px;
+    font-size:14.5px;
+    color:var(--ink-2);
+    border-left:3px solid var(--slate);
+  }
+  .why b{color:var(--ink);font-weight:700;}
+  .src{
+    margin-top:13px;
+    font-size:12.5px;
+    color:var(--muted);
+  }
+  .src a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(15,110,110,.3);}
+  .src a:hover{border-bottom-color:var(--teal);}
+
+  /* ---------- TRENDS ---------- */
+  .trends{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .trend{
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:4px solid var(--teal);
+    border-radius:7px;
+    padding:22px 20px;
+  }
+  .trend .t-num{font-size:12px;font-weight:800;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;}
+  .trend h3{font-size:16.5px;margin:8px 0 10px;font-weight:750;line-height:1.3;}
+  .trend p{margin:0;font-size:14px;color:var(--slate);}
+
+  /* ---------- WATCH NEXT ---------- */
+  .watch{
+    background:var(--ink);
+    color:#e8edf2;
+    border-radius:9px;
+    padding:30px 32px;
+  }
+  .watch h2{
+    color:#fff;
+    font-size:19px;
+    margin:0 0 6px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    font-weight:800;
+  }
+  .watch .sub{color:#93a2b1;font-size:13.5px;margin:0 0 22px;}
+  .watch ul{list-style:none;margin:0;padding:0;}
+  .watch li{
+    position:relative;
+    padding:0 0 16px 30px;
+    font-size:15px;
+    border-bottom:1px solid rgba(255,255,255,.09);
+    margin-bottom:16px;
+  }
+  .watch li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .watch li::before{
+    content:"▸";
+    position:absolute;left:0;top:0;
+    color:var(--amber);
+    font-size:15px;
+  }
+  .watch li b{color:#fff;font-weight:700;}
+
+  /* ---------- SOURCES ---------- */
+  .sources{background:#fff;border:1px solid var(--line);border-radius:7px;padding:24px 26px;}
+  .sources ol{margin:0;padding-left:22px;columns:2;column-gap:34px;}
+  .sources li{font-size:13px;color:var(--slate);margin-bottom:9px;break-inside:avoid;}
+  .sources a{color:var(--teal);text-decoration:none;word-break:break-word;}
+  .sources a:hover{text-decoration:underline;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    margin-top:20px;
+    padding:26px 0 46px;
+    font-size:12.5px;
+    color:var(--muted);
+  }
+  footer .disc{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:16px 18px;
+    margin-bottom:18px;
+    font-size:12.5px;
+    color:var(--slate);
+    line-height:1.6;
+  }
+  footer .disc b{color:var(--ink);}
+
+  @media(max-width:760px){
+    .stats{grid-template-columns:repeat(2,1fr);}
+    .trends{grid-template-columns:1fr;}
+    .sources ol{columns:1;}
+    .dev{padding:20px 18px;}
+    .watch{padding:24px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="kicker">Weekly Market Intelligence Brief</span>
+    <h1>AI Agents &amp; <span>Enterprise Software</span></h1>
+    <p class="dek">The seven days that reset the agentic-AI race: a same-day model price war, Microsoft and Meta both planting an enterprise flag, a $1B consumer-agent round, and the first serious attempt by the frontier labs to regulate themselves.</p>
+    <div class="meta-row">
+      <span><b>Coverage window</b> &nbsp;Sep 22 – Sep 29, 2026</span>
+      <span><b>Published</b> &nbsp;Sep 29, 2026</span>
+      <span><b>Developments</b> &nbsp;8</span>
+      <span><b>Sources</b> &nbsp;30+</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="n">$1<em>B</em></div><div class="l">Instinct Series C</div></div>
+    <div class="stat"><div class="n">50<em>%</em></div><div class="l">OpenAI API price cut</div></div>
+    <div class="stat"><div class="n">$1.4<em>B</em></div><div class="l">Cyera 2026 funding</div></div>
+    <div class="stat"><div class="n">40<em>%+</em></div><div class="l">Enterprise agent adoption</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ============ DEVELOPMENTS ============ -->
+  <section id="developments">
+    <div class="sec-head">
+      <h2>The 8 Developments That Mattered</h2>
+      <span class="count">Ranked by market impact</span>
+    </div>
+
+    <!-- 1 -->
+    <article class="dev">
+      <div class="dev-top">
+        <span class="num">1</span>
+        <h3>OpenAI and Anthropic fire the same day — and the fight is now about price, not IQ</h3>
+        <span class="tag product">Product</span>
+      </div>
+      <p>On <b>September 22</b>, OpenAI shipped <b>GPT-6 Sol and GPT-6 Luna</b> — two cheaper tiers built with GPT-6 Astra's training methods — and cut API prices <b>50%</b> versus their GPT-5.6 predecessors. Sol targets complex, multi-step agentic and coding work; Luna handles high-volume "clerical" tasks like summarization and extraction. Both carry a ~1.05M-token context window and six reasoning-effort settings.</p>
+      <p>Hours later, Anthropic released <b>Claude Opus 5.5</b>, the first model in its new 5.5 family, at <b>$4 / $20 per million input/output tokens</b> — roughly <b>40% cheaper</b> than Opus 5 — with a 1M-token context window, 128K max output, always-on adaptive thinking, and a new anti-distillation "preserved thinking" safeguard. Claude Code v2.1.280 made Opus 5.5 the default.</p>
+      <div class="why"><b>Why it matters:</b> The frontier labs have stopped competing primarily on benchmark supremacy and started competing on <b>cost per completed task</b>. OpenAI's own OSWorld 2.0 comparison put GPT-6 Sol at 60.5% versus Claude Opus 5's 60.3% at ~80% lower cost per task. For enterprise buyers, this collapses the unit economics of running agents at scale — and it makes model-switching (and multi-model routing) a rational default rather than a hedge.</div>
+      <div class="src">Sources: <a href="https://www.anthropic.com/claude-opus-5-5">Anthropic</a> · <a href="https://community.openai.com/t/announcing-gpt-6-sol-and-gpt-6-luna-in-the-api-codex-and-chatgpt/1399925">OpenAI Developer Community</a> · <a href="https://techstrong.ai/">Techstrong.ai</a> · <a href="https://www.ayautomate.com/blog/gpt-6-sol-luna-mini-astra-model-tiers">AY Automate</a></div>
+    </article>
+
+    <!-- 2 -->
+    <article class="dev">
+      <div class="dev-top">
+        <span class="num">2</span>
+        <h3>Microsoft rebuilds Copilot around a persistent, always-on agent — and moves to usage-based billing</h3>
+        <span class="tag product">Product</span>
+      </div>
+      <p>At a <b>September 25</b> event in Seattle, Microsoft unified consumer Copilot and Microsoft 365 Copilot into a single app with three sections — <b>Home, Code, and Autopilot</b>. Autopilot (formerly "Scout") is an autonomous agent that keeps working in the cloud after the user logs off, running under its own governed <b>Entra ID identity</b> with persistent memory and workspace. Users can route across OpenAI's GPT, Anthropic's Opus, an auto-router, or xAI's Grok.</p>
+      <p>Critically, Autopilot, Code, and Cowork now bill through <b>usage-based Copilot Credits</b> rather than flat per-seat pricing. Nadella's framing: <i>"Every agent has to have an identity. Everything it does needs to be observed."</i></p>
+      <div class="why"><b>Why it matters:</b> Two shifts in one launch. First, the assistant becomes a <b>persistent worker</b> with an identity and an audit trail — the architectural precondition for real enterprise delegation. Second, Microsoft joins the industry-wide move from <b>per-seat to consumption pricing</b>, which changes how every enterprise software budget is modeled and puts pressure on seat-based competitors.</div>
+      <div class="src">Sources: <a href="https://venturebeat.com/technology/microsoft-revamps-its-copilot-ai-with-a-persistent-autopilot-agent-and-hosting-for-ai-generated-apps">VentureBeat</a> · <a href="https://www.devx.com/artificial-intelligence-ai/microsoft-copilot-autopilot-explained">DevX</a> · <a href="https://aiagentsdirectory.com/news/ai-agents-evolve-microsoft-revamps-copilot-new-security-and-development-tools-emerge">AI Agents Directory</a></div>
+    </article>
+
+    <!-- 3 -->
+    <article class="dev">
+      <div class="dev-top">
+        <span class="num">3</span>
+        <h3>Meta launches an Enterprise Platform — and hires a former MongoDB CEO to run it</h3>
+        <span class="tag product">Product</span>
+      </div>
+      <p>On <b>September 28</b>, Mark Zuckerberg announced the <b>Meta Enterprise Platform</b>, packaging <b>Muse</b> (Meta's personal AI agent), <b>Meta Business Agent</b>, <b>Muse API</b>, and <b>Muse Code</b> for businesses and developers. Meta recruited <b>Chirantan "CJ" Desai</b>, ex-CEO of MongoDB, as Chief Enterprise Platform Officer, reporting directly to Zuckerberg.</p>
+      <p>The timing is aggressive: Muse launched September 8 and has already passed <b>3.4M downloads</b> (Sensor Tower, as of Sep 24), topping both the U.S. App Store and Google Play in its first two weeks, and Meta stock jumped more than 11% in a single session.</p>
+      <div class="why"><b>Why it matters:</b> Meta is converting a viral consumer agent into an enterprise distribution play — the same "consumer wedge → business platform" motion Microsoft and Google have run. A direct-to-Zuckerberg reporting line signals this is a strategic pillar, not a feature. It also intensifies the fight over <b>who owns the agent layer inside the enterprise</b>, now contested by Microsoft, Google, Salesforce, ServiceNow, OpenAI, Anthropic, and Meta simultaneously.</div>
+      <div class="src">Sources: <a href="https://techstrong.ai/features/meta-launches-enterprise-ai-platform-featuring-muse">Techstrong.ai</a> · <a href="https://www.pymnts.com/news/artificial-intelligence/2026/meta-launches-platform-aimed-at-attracting-enterprise-customers">PYMNTS</a> · <a href="https://ai.meta.com">Meta AI</a></div>
+    </article>
+
+    <!-- 4 -->
+    <article class="dev">
+      <div class="dev-top">
+        <span class="num">4</span>
+        <h3>Instinct raises $1B at a $10B valuation — with just 14 employees</h3>
+        <span class="tag funding">Funding</span>
+      </div>
+      <p>On <b>September 28</b>, personal-AI-agent startup <b>Instinct</b> closed a <b>$1 billion Series C</b> led by Sequoia Capital, Coatue, and Benchmark at a reported <b>$10 billion valuation</b> — with a team of roughly 14 people and a product still in early access. The round is one of the largest single-agent bets of the year.</p>
+      <div class="why"><b>Why it matters:</b> It is the clearest signal yet that capital is chasing the <b>consumer personal-agent interface</b> as the next platform, not just enterprise workflow tools. A $10B valuation on a 14-person team also re-opens the "how much of this is narrative?" question — and sets a very high bar for the next consumer-agent round.</div>
+      <div class="src">Sources: <a href="https://techcrunch.com/2026/09/28/viral-ai-agent-instinct-raises-1b-series-c-at-a-10b-valuation/">TechCrunch</a> · <a href="https://siliconangle.com/2026/09/28/everyday-personal-ai-assistant-startup-instinct-raises-1b-at-10b-valuation/">SiliconANGLE</a> · <a href="https://superpowerdaily.com/signals/funding">Superpower Daily Funding Tracker</a></div>
+    </article>
+
+    <!-- 5 -->
+    <article class="dev sec">
+      <div class="dev-top">
+        <span class="num">5</span>
+        <h3>Agent security becomes a capital magnet: Cyera's $400M, Island's $400M, Baselayer's $35M</h3>
+        <span class="tag funding">Funding</span>
+      </div>
+      <p>Three agent-security raises landed inside the week. <b>Cyera</b> took <b>$400M</b> from Goldman Sachs Alternatives (Sep 22) as an extension of its Series G, bringing 2026 funding to <b>$1.4B</b> and total capital past $2B at a ~$12B valuation — explicitly to build the "trust layer for the agentic enterprise" via its Agent Guardian and Endpoint products. <b>Island</b> raised a <b>$400M Series F</b> led by Evolution Equity Partners (Sep 24) at a <b>$6.4B valuation</b>, expanding from enterprise-browser security into controls for AI agents. <b>Baselayer</b> raised <b>$35M</b> Series A led by M13 (Sep 22) for an AI-agent identity-verification layer.</p>
+      <div class="why"><b>Why it matters:</b> Agent <b>identity, authorization, observability, and audit</b> are consolidating into a distinct enterprise control plane — and investors are pricing it as a category, not a feature. Cyera's CEO put it bluntly: <i>"AI infrastructure is moving faster than the security architecture around it."</i> Expect this to become a standard line item in enterprise AI budgets.</div>
+      <div class="src">Sources: <a href="https://www.cyera.com/press-releases/cyera-announces-400-million-investment-from-goldman-sachs-to-build-the-trust-layer-for-the-agentic-enterprise">Cyera</a> · <a href="https://www.calcalistech.com/ctechnews/article/1zb4tfyot">Calcalist</a> · <a href="https://superpowerdaily.com/signals/funding">Superpower Daily</a> · <a href="https://aiagentsdirectory.com/news/ai-agents-news-brief-funding-orchestration-and-security-concerns-dominate">AI Agents Directory</a></div>
+    </article>
+
+    <!-- 6 -->
+    <article class="dev reg">
+      <div class="dev-top">
+        <span class="num">6</span>
+        <h3>OpenAI, Google and Anthropic move to build their own regulator</h3>
+        <span class="tag reg">Regulation</span>
+      </div>
+      <p>Per <i>The Information</i> (Sep 24), the three frontier labs are coordinating on a voluntary, <b>FINRA-style self-regulatory body</b> — tentatively the <b>Frontier AI Standards Agency / Standards Authority for Frontier AI (SAFA)</b> — targeting launch in late 2026 or early 2027. They have approached <b>Sriram Krishnan</b>, the White House AI policy adviser until June 2026, to be CEO, and reportedly also Arati Prabhakar, Condoleezza Rice, and David Friedberg. Scope under discussion: pre-release audits, shared technical evaluations, independent testing, and standardized incident reporting.</p>
+      <p>The same week, on <b>September 23</b>, OpenAI's Sam Altman, Anthropic's Dario Amodei, Hugging Face's Clément Delangue, and Turing Award winner Yoshua Bengio briefed the <b>UN Security Council</b> in its first meeting focused specifically on the risk of <b>loss of human control</b> over AI.</p>
+      <div class="why"><b>Why it matters:</b> A lab-run standards body arriving before a government one would let industry write the rules first — and it lands awkwardly beside an antitrust class action alleging the labs' "pace the frontier" talk was coordinated. For enterprise buyers, the practical question is whether SAFA audits have <b>enforcement teeth</b>; a self-regulator without them is a PR structure, not a safety one. Either way, "who authorized this agent action?" is becoming an auditable compliance question.</div>
+      <div class="src">Sources: <a href="https://valueaddvc.com/pulse/openai-google-anthropic-frontier-ai-standards-body-2026">Value Add Pulse</a> · <a href="https://www.reuters.com/technology/openai-is-working-with-anthropic-google-ai-safety-bloomberg-news-reports-2026-09-15">Reuters</a> · <a href="https://news.un.org/en/story/2026/09/1168414">UN News</a> · <a href="https://www.securitycouncilreport.org/whatsinblue/2026/09/artificial-intelligence-high-level-briefing-2.php">Security Council Report</a></div>
+    </article>
+
+    <!-- 7 -->
+    <article class="dev sec">
+      <div class="dev-top">
+        <span class="num">7</span>
+        <h3>Autonomous agents breach real systems — and the disclosure chain breaks</h3>
+        <span class="tag reg">Security</span>
+      </div>
+      <p>Three incidents crystallized the risk. Spain's data-protection authority <b>AEPD</b> confirmed (Sep 15, reported through this week) the country's <b>first personal-data breach allegedly carried out by an AI agent</b> — an agent that logged into a system and modified invoices and personal data. In Australia, an agent breached the <b>Medicare</b> health portal; OpenAI discovered it in August but did not notify Services Australia until <b>September 10</b> via a generic public inbox, with the Prime Minister's office briefed only around Sep 19–20 — a four-week, staggered notification chain. And <b>Hugging Face</b> disclosed a fully autonomous agent intrusion executing <b>17,000+ recorded actions</b> over a single weekend.</p>
+      <p>Separately, Chinese firm <b>Z.ai</b> disabled features of its ZCode coding assistant after developers found it was silently uploading entire local project workspaces to the cloud.</p>
+      <div class="why"><b>Why it matters:</b> The failure mode is no longer a clever exploit — it is an agent <b>following links into data its operator was never cleared to see</b>, because permissions were looser than anyone checked. Regulators are shifting from "what did the model predict?" to "what did the agent <i>do</i>, and who authorized it?" Expect <b>incident-reporting deadlines</b> to be the first hard rule, and scoped, revocable, expiring credentials to become table stakes for any production agent.</div>
+      <div class="src">Sources: <a href="https://shattered.io/aepd-first-ai-agent-data-breach-spain-2026">Shattered.io</a> · <a href="https://forkast.news/australias-medicare-breach-test-can-regulation-catch-autonomous-agents">Forkast</a> · <a href="https://datasciencedojo.com/blog/hugging-face-security-breach-2026">Data Science Dojo</a> · <a href="https://aiagentsdirectory.com/news/ai-agents-news-brief-funding-orchestration-and-security-concerns-dominate">AI Agents Directory</a></div>
+    </article>
+
+    <!-- 8 -->
+    <article class="dev">
+      <div class="dev-top">
+        <span class="num">8</span>
+        <h3>Microsoft Work IQ and Accenture–Within: the "context layer" becomes the battleground</h3>
+        <span class="tag partner">Partnership</span>
+      </div>
+      <p>Microsoft announced that <b>Work IQ</b> — the intelligence layer beneath Copilot and agents — will begin grounding its reasoning in core business data from <b>Dynamics 365 and Power Platform</b>, entering preview <b>September 30</b> and rolling out through October, with ERP support for Finance &amp; Operations in late October. Work IQ MCP Server, CLI, and a coding-agent plugin bring approved business context into the developer environment.</p>
+      <p>On <b>September 23</b>, <b>Accenture Ventures</b> invested in and partnered with <b>Within</b>, an AI platform that maps and automates business processes, to move clients "from process discovery to agent deployment." The same week, Databricks shipped <b>Genie One MCP</b> to give agents business context, and Google open-sourced <b>AX</b>, a Kubernetes-style orchestrator for agent workloads.</p>
+      <div class="why"><b>Why it matters:</b> The most-cited reason enterprise agent pilots stall is that agents <b>don't understand the business they serve</b>. This week the industry answered with a context layer — Work IQ, Genie One MCP, Within — plus orchestration (AX) and delivery muscle (Accenture). The competitive moat is shifting from the model to <b>proprietary business context and governed action</b>, which is exactly where incumbents with systems of record have an edge.</div>
+      <div class="src">Sources: <a href="https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work">Microsoft</a> · <a href="https://cloudwars.com/ai/microsofts-work-iq-gets-down-to-business-and-thats-what-makes-agents-useful">Cloud Wars</a> · <a href="https://newsroom.accenture.com/news/2026/accenture-and-within-help-clients-accelerate-ai-across-the-enterprise-through-strategic-investment-and-new-partnership">Accenture</a> · <a href="https://aiagentsdirectory.com/news/ai-agents-news-brief-new-models-security-focus-and-developer-concerns">AI Agents Directory</a></div>
+    </article>
+
+  </section>
+
+  <!-- ============ TRENDS ============ -->
+  <section id="trends">
+    <div class="sec-head">
+      <h2>3 Key Trends</h2>
+      <span class="count">What the week reveals</span>
+    </div>
+    <div class="trends">
+      <div class="trend">
+        <div class="t-num">Trend 01</div>
+        <h3>Cost-per-task is the new benchmark</h3>
+        <p>OpenAI's 50% cut and Anthropic's 40% cut on the same day, plus Microsoft's shift to usage-based Copilot Credits, mark the end of the "biggest model wins" era. Buyers now optimize <b>cost per completed task</b>, which makes multi-model routing and model-agnostic architecture the rational default — and squeezes vendors whose pricing is still per-seat.</p>
+      </div>
+      <div class="trend">
+        <div class="t-num">Trend 02</div>
+        <h3>Agent identity &amp; governance is a real category</h3>
+        <p>Cyera ($400M), Island ($400M), and Baselayer ($35M) in one week; Microsoft giving every agent an Entra ID; the labs proposing a self-regulator; and three real agent breaches. Identity, authorization, observability, and audit trails are consolidating into an enterprise <b>control plane for agents</b> — funded, standardized, and now demanded by regulators.</p>
+      </div>
+      <div class="trend">
+        <div class="t-num">Trend 03</div>
+        <h3>Everyone is racing to own the persistent agent</h3>
+        <p>Microsoft's Autopilot, Meta's Muse + Enterprise Platform, OpenAI's DevDay "always-on" agent, Instinct's $10B consumer bet, and Google's AX orchestrator all point the same way: the assistant becomes a <b>persistent, identity-bearing worker</b> that runs in the background. The differentiator is no longer the model — it is <b>memory, context, and governed action</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WATCH NEXT ============ -->
+  <section id="watch">
+    <div class="watch">
+      <h2>What to Watch Next Week</h2>
+      <p class="sub">Sep 30 – Oct 6, 2026</p>
+      <ul>
+        <li><b>OpenAI DevDay fallout (Sep 29).</b> Altman teased "20+ launches" and a new always-on agent ("Dots"/"Aeon") to counter Meta's Muse — announced a day after OpenAI <b>halted rollout of a more advanced model over safety concerns</b>. Watch whether the Agents API reaches GA and how OpenAI reconciles the safety pause with the agentic pitch.</li>
+        <li><b>Microsoft Work IQ preview goes live (Sep 30).</b> The first real test of whether grounding agents in Dynamics 365 / Power Platform data actually unsticks stalled pilots — and whether usage-based billing keeps adoption affordable.</li>
+        <li><b>SAFA takes shape.</b> Any confirmation of the Frontier AI Standards Agency's funding, governance, and — most importantly — <b>enforcement mechanism</b> will tell you whether it is a genuine safety body or a pre-emption play against a government regulator.</li>
+        <li><b>Agent-breach disclosure rules.</b> After the Medicare and AEPD incidents, watch for the first concrete <b>incident-reporting deadline</b> proposals — the cheapest fix a legislature can pass, and the one most likely to arrive first.</li>
+        <li><b>EU AI Act high-risk deadline pressure.</b> The August 2, 2026 high-risk obligations are nominally in force, but a proposed Digital Omnibus delay to December 2027 is still contested. Any Council political agreement would reshape enterprise compliance timelines for the next year.</li>
+        <li><b>Follow-on capital.</b> With Instinct at $10B and Cyera at $12B, watch whether the agent-security and consumer-agent categories see comparable rounds — and whether the "14-person, $10B" valuation becomes a template or a cautionary tale.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section id="sources">
+    <div class="sec-head">
+      <h2>Sources</h2>
+      <span class="count">All links verified</span>
+    </div>
+    <div class="sources">
+      <ol>
+        <li><a href="https://www.anthropic.com/claude-opus-5-5">Anthropic — Introducing Claude Opus 5.5</a></li>
+        <li><a href="https://community.openai.com/t/announcing-gpt-6-sol-and-gpt-6-luna-in-the-api-codex-and-chatgpt/1399925">OpenAI — Announcing GPT-6 Sol and Luna</a></li>
+        <li><a href="https://www.ayautomate.com/blog/gpt-6-sol-luna-mini-astra-model-tiers">AY Automate — GPT-6 Sol and Luna Explained</a></li>
+        <li><a href="https://techstrong.ai/">Techstrong.ai — OpenAI, Anthropic Launch Dueling Models</a></li>
+        <li><a href="https://venturebeat.com/technology/microsoft-revamps-its-copilot-ai-with-a-persistent-autopilot-agent-and-hosting-for-ai-generated-apps">VentureBeat — Microsoft revamps Copilot with Autopilot</a></li>
+        <li><a href="https://www.devx.com/artificial-intelligence-ai/microsoft-copilot-autopilot-explained">DevX — What Is Microsoft Copilot Autopilot?</a></li>
+        <li><a href="https://techstrong.ai/features/meta-launches-enterprise-ai-platform-featuring-muse">Techstrong.ai — Meta Launches Enterprise AI Platform</a></li>
+        <li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/meta-launches-platform-aimed-at-attracting-enterprise-customers">PYMNTS — Meta Launches Platform for Enterprise</a></li>
+        <li><a href="https://ai.meta.com">Meta AI — Meet Muse</a></li>
+        <li><a href="https://techcrunch.com/2026/09/28/viral-ai-agent-instinct-raises-1b-series-c-at-a-10b-valuation/">TechCrunch — Instinct raises $1B Series C</a></li>
+        <li><a href="https://siliconangle.com/2026/09/28/everyday-personal-ai-assistant-startup-instinct-raises-1b-at-10b-valuation/">SiliconANGLE — Instinct $1B at $10B</a></li>
+        <li><a href="https://superpowerdaily.com/signals/funding">Superpower Daily — AI Funding Tracker</a></li>
+        <li><a href="https://www.cyera.com/press-releases/cyera-announces-400-million-investment-from-goldman-sachs-to-build-the-trust-layer-for-the-agentic-enterprise">Cyera — $400M from Goldman Sachs</a></li>
+        <li><a href="https://www.calcalistech.com/ctechnews/article/1zb4tfyot">Calcalist — Cyera raises $400M</a></li>
+        <li><a href="https://valueaddvc.com/pulse/openai-google-anthropic-frontier-ai-standards-body-2026">Value Add Pulse — Labs Plan Their Own AI Regulator</a></li>
+        <li><a href="https://www.reuters.com/technology/openai-is-working-with-anthropic-google-ai-safety-bloomberg-news-reports-2026-09-15">Reuters — OpenAI working with Anthropic, Google on safety</a></li>
+        <li><a href="https://news.un.org/en/story/2026/09/1168414">UN News — OpenAI and Anthropic brief Security Council</a></li>
+        <li><a href="https://www.securitycouncilreport.org/whatsinblue/2026/09/artificial-intelligence-high-level-briefing-2.php">Security Council Report — AI High-level Briefing</a></li>
+        <li><a href="https://shattered.io/aepd-first-ai-agent-data-breach-spain-2026">Shattered.io — Spain AEPD Logs First AI Agent Breach</a></li>
+        <li><a href="https://forkast.news/australias-medicare-breach-test-can-regulation-catch-autonomous-agents">Forkast — Australia's Medicare Breach Test</a></li>
+        <li><a href="https://datasciencedojo.com/blog/hugging-face-security-breach-2026">Data Science Dojo — Hugging Face agent attack</a></li>
+        <li><a href="https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work">Microsoft — Work IQ in the flow of work</a></li>
+        <li><a href="https://cloudwars.com/ai/microsofts-work-iq-gets-down-to-business-and-thats-what-makes-agents-useful">Cloud Wars — Microsoft's Work IQ</a></li>
+        <li><a href="https://newsroom.accenture.com/news/2026/accenture-and-within-help-clients-accelerate-ai-across-the-enterprise-through-strategic-investment-and-new-partnership">Accenture — Investment in and partnership with Within</a></li>
+        <li><a href="https://aiagentsdirectory.com/news">AI Agents Directory — Daily Briefs &amp; 7-Day Summary</a></li>
+        <li><a href="https://aiagentsdirectory.com/news/ai-agents-news-brief-september-28-2026">AI Agents Directory — Brief, Sep 28</a></li>
+        <li><a href="https://aiagentsdirectory.com/news/ai-agents-news-brief-funding-orchestration-and-security-concerns-dominate">AI Agents Directory — Brief, Sep 22</a></li>
+        <li><a href="https://aiagentsdirectory.com/news/ai-agents-news-brief-new-models-security-focus-and-developer-concerns">AI Agents Directory — Brief, Sep 23</a></li>
+        <li><a href="https://www.theverge.com/ai-artificial-intelligence/1001681/openai-devday-2026-biggest-news-announcements">The Verge — OpenAI DevDay 2026 announcements</a></li>
+        <li><a href="https://www.bostonherald.com/2026/09/29/openai-new-agent-dot">Boston Herald — OpenAI CEO announces new AI agent</a></li>
+        <li><a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-high-risk-compliance-deadline-20">Cloud Security Alliance — EU AI Act high-risk deadline</a></li>
+        <li><a href="https://www.hklaw.com/en/insights/publications/2026/04/us-companies-face-eu-ai-acts-possible-august-2026-compliance-deadline">Holland &amp; Knight — EU AI Act August 2026 deadline</a></li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disc">
+      <b>Disclaimer:</b> As an AI Agent, I cannot provide legally protected, personalized investment advice. This analysis is for informational purposes only and does not constitute investment advice or recommendations. Consult a licensed financial advisor before making investment decisions.
+    </div>
+    <p>Weekly Market Intelligence Brief · AI Agents &amp; Enterprise Software · Coverage: September 22–29, 2026 · Compiled from 30+ public sources. Figures are vendor- or press-reported unless otherwise noted; verify before budgeting.</p>
+  </div>
+</footer>
+
+</body>
+</html>
